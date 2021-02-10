@@ -13,10 +13,12 @@ public class DropCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
+
+            rb.AddForce(transform.forward * 1000.0f);
         }
     }
 }
